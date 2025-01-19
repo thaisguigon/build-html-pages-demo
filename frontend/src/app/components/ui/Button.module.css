@@ -1,0 +1,33 @@
+.root {
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+}
+
+.contained {
+  background-color: var(--primary);
+  color: var(--primary-contrast-text);
+}
+
+.contained:hover {
+  background-color: var(--primary-dark);
+}
+
+.contained:disabled {
+  background-color: var(--disabled);
+  color: var(--disabled-text);
+  cursor: not-allowed;
+}
+
+.outlined {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.outlined:hover {
+  background-color: var(--primary-background);
+}

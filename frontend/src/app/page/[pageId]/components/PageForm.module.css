@@ -1,0 +1,57 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.block {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.blockHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block label {
+  display: grid;
+  gap: 16px;
+  align-items: center;
+  grid-template-columns: 1fr 5fr;
+}
+
+.errorField {
+  outline: auto 1px;
+  outline-color: var(--error);
+}
+
+.error {
+  color: var(--error);
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.addBlockButton {
+  align-self: flex-end;
+}
