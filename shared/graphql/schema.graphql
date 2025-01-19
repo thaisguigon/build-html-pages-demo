@@ -1,0 +1,34 @@
+type Query {
+  pages: [Page!]!
+  page(id: ID!): Page!
+}
+
+type Mutation {
+  createPage(title: String!): Page!
+  updatePage(input: UpdatePageInput!): Page!
+}
+
+type Page {
+  id: ID!
+  title: String!
+  styles: String
+  blocks: [Block!]!
+}
+
+type Block {
+  id: ID!
+  type: String!
+  value: String!
+}
+
+input UpdatePageInput {
+  id: ID!
+  title: String
+  styles: String
+  blocks: [BlockInput!]
+}
+
+input BlockInput {
+  type: String!
+  value: String!
+}
