@@ -52,10 +52,9 @@ COPY shared ./shared
 
 WORKDIR /usr/src/app/backend
 
+# Push prisma schema to DB and run the build script
 COPY backend/.env.docker ./.env
-
-# Run the build script.
-RUN npm run build && npx prisma db push
+RUN npm run prisma:db:push && npm run build
 
 ################################################################################
 # Create a new stage to run the application with minimal runtime dependencies

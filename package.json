@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "workspaces": [
     "./backend",
-    "./docker",
     "./frontend",
     "./shared"
   ],
   "scripts": {
-    "compose:up": "docker compose up",
+    "compose:up": "docker compose -f 'compose.yaml' up -d --build",
     "compose:down": "docker compose down"
   }
 }
