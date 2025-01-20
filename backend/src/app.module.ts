@@ -9,7 +9,7 @@ import { PageModule } from './pages/page.module';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      typePaths: ['../shared/graphql/schema.graphql'],
+      typePaths: ['node_modules/shared/graphql/schema.graphql'],
     }),
     PageModule,
   ],

@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/",
     "start": "next start",
-    "lint": "next lint"
+    "start:prod": "node .next/standalone/server.js",
+    "lint": "next lint",
+    "reset:env": "rm -rf .env && cp .env.example .env"
   },
   "dependencies": {
     "@apollo/client": "^3.12.6",

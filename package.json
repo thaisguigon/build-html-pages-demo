@@ -1,0 +1,14 @@
+{
+  "name": "technical-test",
+  "version": "1.0.0",
+  "workspaces": [
+    "./backend",
+    "./docker",
+    "./frontend",
+    "./shared"
+  ],
+  "scripts": {
+    "compose:up": "docker compose up",
+    "compose:down": "docker compose down"
+  }
+}
