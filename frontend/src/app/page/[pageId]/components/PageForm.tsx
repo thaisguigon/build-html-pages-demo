@@ -12,6 +12,7 @@ import {
   useFieldArray,
   useForm,
 } from "react-hook-form";
+import { getPageByIdQuery } from "../graphql/getPageByIdQuery";
 import {
   MutationUpdatePageArgs,
   MutationUpdatePageResult,
@@ -67,6 +68,7 @@ export const PageForm = ({ defaultValues, pageId }: PageFormProps) => {
             })),
           },
         },
+        refetchQueries: [getPageByIdQuery, "GetPageById"],
       });
       form.reset(data, { keepValues: true });
     },

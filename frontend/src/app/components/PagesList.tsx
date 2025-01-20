@@ -9,6 +9,7 @@ import {
   createPageMutation,
   MutationCreatePageResult,
 } from "../graphql/createPageMutation";
+import { getAllPagesQuery } from "../graphql/getAllPagesQuery";
 import styles from "./PagesList.module.css";
 import { Button } from "./ui/Button";
 import { Card } from "./ui/Card";
@@ -30,6 +31,7 @@ export const PagesList = ({ pages }: PagesListProps) => {
       variables: {
         title: "",
       },
+      refetchQueries: [getAllPagesQuery, "GetAllPages"],
     });
 
     if (createdPageData.data?.createPage) {

@@ -1,4 +1,7 @@
-import { graphqlRequest } from "@/app/utils/graphqlRequest";
+"use client";
+
+import { useQuery } from "@apollo/client";
+import { use } from "react";
 import { PageForm } from "./components/PageForm";
 import {
   getPageByIdQuery,
@@ -10,12 +13,17 @@ type PageParams = {
   pageId: string;
 };
 
-const Page = async ({ params }: { params: Promise<PageParams> }) => {
-  const { pageId } = await params;
+const Page = ({ params }: { params: Promise<PageParams> }) => {
+  const { pageId } = use(params);
 
-  const data = await graphqlRequest<GetPageByIdQueryResult>(getPageByIdQuery, {
-    id: pageId,
+  const { data, loading } = useQuery<GetPageByIdQueryResult>(getPageByIdQuery, {
+    variables: {
+      id: pageId,
+    },
   });
+
+  if (loading || !data) return <p>Loading...</p>;
+
   const pageData = data?.page;
 
   const defaultValues: Partial<FormValues> = {
